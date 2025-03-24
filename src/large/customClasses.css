@@ -16,7 +16,7 @@
 }
 
 .buttonPrimaryColor {
-  color: #6c62ff;
+  color: #3f34d4;
 }
 
 .buttonSecondColor {
@@ -40,5 +40,20 @@
   &:hover {
     opacity: 0.9;
   }
+}
+/* ------- */
+/* Sliders */
+.sliderItem {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 12px;
+  font-size: 14px;
+  padding: 7px 20px;
+  border-radius: 100px;
+  border: solid 3px;
+  color: var(--primary-color);
+  font-weight: 600;
+  background-color: #35343a;
 }
 /* ------- */
