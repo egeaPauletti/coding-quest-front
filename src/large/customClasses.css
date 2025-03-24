@@ -32,7 +32,6 @@
 
 /* Buttons */
 .buttonsBackground {
-  padding: 5px 30px;
   border-radius: 10px;
   background-color: var(--button-primary-color);
   box-shadow: 0px 5px 0px 0px var(--button-second-color);

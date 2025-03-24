@@ -2,11 +2,18 @@ import "../customClasses.css";
 
 interface textProps {
   text: string;
+  width: number;
+  height: number;
 }
-const Button: React.FC<textProps> = ({ text }) => {
+const Button: React.FC<textProps> = ({ text, height, width }) => {
   return (
     <>
-      <button className="primaryColor text-xl buttonsBackground">{text}</button>
+      <button
+        style={{ width: width, height: height }}
+        className={"primaryColor font-semibold text-xl buttonsBackground"}
+      >
+        {text}
+      </button>
     </>
   );
 };
