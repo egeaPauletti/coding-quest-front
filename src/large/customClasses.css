@@ -1,0 +1,45 @@
+@import "tailwindcss";
+:root {
+  --primary-color: #ffffff;
+  --second-color: #24c97b;
+  --button-primary-color: #6c62ff;
+  --button-second-color: #4a3df9;
+}
+
+/* Colors */
+.primaryColor {
+  color: #ffffff;
+}
+
+.secondColor {
+  color: #24c97b;
+}
+
+.buttonPrimaryColor {
+  color: #6c62ff;
+}
+
+.buttonSecondColor {
+  color: #4a3df9;
+}
+/* ------- */
+
+/* Fonts */
+.revalia {
+  font-family: "Revalia", sans-serif;
+}
+/* ------- */
+
+/* Buttons */
+.buttonsBackground {
+  padding: 5px 30px;
+  border-radius: 10px;
+  background-color: var(--button-primary-color);
+  box-shadow: 0px 5px 0px 0px var(--button-second-color);
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+/* ------- */
