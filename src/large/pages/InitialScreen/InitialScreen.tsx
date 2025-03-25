@@ -240,6 +240,57 @@ export default function InitialScreen() {
           </div>
         </div>
       </div>
+
+      <div className="flex justify-center items-center gap-10 h-[60vh] w-screen">
+        <Logo size={450} />
+        <div className="flex flex-col gap-10 w-2xl ">
+          <h2 className="secondColor text-3xl font-bold">
+            O que é Coding Quest
+          </h2>
+          <span className="primaryColor">
+            Bem-vindo ao CodingQuest, a plataforma online que transforma o
+            aprendizado de lógica de programação em uma aventura envolvente e
+            divertida! Se você está começando sua jornada no mundo da
+            programação ou quer aprimorar suas habilidades, o CodingQuest foi
+            projetado para tornar esse processo intuitivo, desafiador e
+            recompensador.
+          </span>
+          <span className="secondColor font-bold text-xl">
+            Uma Jornada Gamificada
+          </span>
+          <span className="primaryColor">
+            No CodingQuest, a programação vai além de códigos e algoritmos: é
+            uma experiência gamificada! Você avança por níveis, desbloqueia
+            conquistas e enfrenta desafios que evoluem conforme sua habilidade.
+            Cada problema resolvido é um passo adiante em sua jornada, trazendo
+            a satisfação de ver seu progresso em tempo real.
+          </span>
+        </div>
+      </div>
+
+      {/* <div className="flex flex-col">
+        <h2 className="primaryColor text-3xl">Nossa plataforma</h2>
+
+        <div className="flex ">
+          <div>
+            <div>
+              <span></span>
+              <figure></figure>
+              <span></span>
+            </div>
+
+            <div>
+            <span></span>
+              <figure></figure>
+              <span></span>
+            </div>
+
+            <div></div>
+          </div>
+
+          <div></div>
+        </div>
+      </div> */}
     </>
   );
 }
