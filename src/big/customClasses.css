@@ -56,9 +56,11 @@
 
 .sideBarHover {
   box-shadow: 10px 0px 5px 0px rgba(27, 27, 27, 0.75);
-  transition: 0.8s ease-in-out;
+  transition: 0.2s ease-in-out;
+  position: absolute;
+  z-index: 100;
   &:hover {
-    width: 15%;
+    width: 300px;
     align-items: start;
     padding-left: 2.5%;
 
@@ -73,6 +75,7 @@
         left: 120%;
         width: max-content;
         font-family: "Comfortaa", sans-serif;
+        font-size: 1.2rem;
       }
     }
 

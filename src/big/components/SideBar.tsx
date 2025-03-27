@@ -8,7 +8,7 @@ import ConfigIcon from "./icons/iconsSideBar/ConfigIcon";
 export default function SideBar() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center w-[5%] h-full backgroundComponents rounded-tl-2xl rounded-bl-2xl sideBarHover">
+      <div className="flex flex-col items-center justify-center w-[7%] h-full backgroundComponents rounded-tl-2xl rounded-bl-2xl sideBarHover">
         <div className=" flex flex-col items-center justify-between h-[90%]">
           <div className="flex flex-col items-center gap-20 relative">
             <figure className="flex items-center titleHover">

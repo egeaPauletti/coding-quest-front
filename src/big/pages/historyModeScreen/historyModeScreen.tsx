@@ -8,7 +8,7 @@ export default function HistoryModeScreen() {
   return (
     <>
       <div className="flex  items-center justify-center w-screen h-screen">
-        <div className="flex w-[95%] h-[90%] rounded-3xl backgroundColor gap-20">
+        <div className="flex w-[95%] h-[90%] rounded-3xl backgroundColor gap-20 relative">
           <SideBar />
           <div>
             <ProfileBar
