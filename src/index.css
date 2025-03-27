@@ -2,6 +2,6 @@
 body {
   font-family: "Roboto" sans-serif;
   background-image: url(./big/assets/backgroundInitial.png);
-  background-size: cover;
+  background-size: 100%;
   overflow-x: hidden;
 }
