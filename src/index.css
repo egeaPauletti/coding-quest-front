@@ -1,7 +1,7 @@
 @import "tailwindcss";
 body {
   font-family: "Roboto" sans-serif;
-  background-image: url(./large/assets/backgroundInitial.png);
+  background-image: url(./big/assets/backgroundInitial.png);
   background-size: cover;
   overflow-x: hidden;
 }
