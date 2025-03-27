@@ -20,6 +20,7 @@ import secondMedal from "../../assets/icons/iconsInitialScreen/secondPositionMed
 import thirdMedal from "../../assets/icons/iconsInitialScreen/thirdPositionMedal.png";
 
 import "../../customClasses.css";
+import "./index.css";
 type TypingTextProps = {
   text: string;
   speed?: number;
@@ -82,6 +83,7 @@ export default function InitialScreen() {
               <br />
               prática e divertida!!!
             </span>
+            \
             <TypingText text="{Desafios do Inciante ao Avançado}" />
           </div>
           <Button width={320} height={50} text="Comece a Programar" />
