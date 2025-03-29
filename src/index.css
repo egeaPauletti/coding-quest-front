@@ -5,3 +5,7 @@ body {
   background-size: 100%;
   overflow-x: hidden;
 }
+
+input:focus {
+  outline: none;
+}

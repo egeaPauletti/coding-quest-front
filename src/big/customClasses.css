@@ -27,6 +27,10 @@
   background-color: #232429;
 }
 
+.backgroundComponents2 {
+  background-color: #2d2e34;
+}
+
 .buttonPrimaryColor {
   color: #3f34d4;
 }
@@ -40,6 +44,10 @@
 .revalia {
   font-family: "Revalia", sans-serif;
 }
+
+.rocky {
+  font-family: "RocknRoll One", sans-serif;
+}
 /* ------- */
 
 /* Buttons */
@@ -50,7 +58,7 @@
   cursor: pointer;
 
   &:hover {
-    opacity: 0.9;
+    opacity: 0.8;
   }
 }
 
@@ -58,6 +66,8 @@
   box-shadow: 10px 0px 5px 0px rgba(27, 27, 27, 0.75);
   transition: 0.2s ease-in-out;
   position: absolute;
+  left: 0;
+  top: 0;
   z-index: 100;
   &:hover {
     width: 300px;
@@ -140,8 +150,42 @@
       }
     }
   }
+}
 
-  .profileShadow {
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+.profileShadow {
+  box-shadow: 12px 12px 12px 0px rgba(27, 27, 27, 0.5);
+}
+
+.levelBar {
+  ::after {
+    content: "";
+    width: 50%;
+    height: 4px;
+    background-color: var(--second-color);
+    position: absolute;
+    top: -1px;
+  }
+}
+
+.purpleBar {
+  &::before {
+    content: "";
+    width: 1.5%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #864bc0;
+    border-radius: 8px 0 0 8px;
+  }
+}
+
+.inputForms {
+  & input {
+    width: 850px;
+    height: 250px;
+    color: var(--primary-color);
+    background-color: #434249;
+    border: 1px solid #454448;
   }
 }

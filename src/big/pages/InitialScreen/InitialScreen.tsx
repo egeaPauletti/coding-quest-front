@@ -60,7 +60,7 @@ export default function InitialScreen() {
             </h1>
           </figure>
           <div className="flex gap-3 items-center">
-            <Button width={100} height={40} text="Entrar" />
+            <Button width={100} height={45} text="Entrar" />
             <span className="primaryColor text-xl font-bold">|</span>
             <span className="primaryColor text-lg font-bold cursor-pointer">
               Registrar
@@ -86,7 +86,7 @@ export default function InitialScreen() {
             \
             <TypingText text="{Desafios do Inciante ao Avançado}" />
           </div>
-          <Button width={320} height={50} text="Comece a Programar" />
+          <Button width={320} height={45} text="Comece a Programar" />
         </div>
         {/* --------- */}
 
