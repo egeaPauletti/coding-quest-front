@@ -21,10 +21,14 @@ export default function LoginForm() {
         required
       />
       <input
-        className="w-[80%] h-14 px-6 py-2 bg-[#D9D9D9] rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#7703FF] mb-12"
+        className="w-[80%] h-14 px-6 py-2 bg-[#D9D9D9] rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#7703FF]"
         placeholder="Senha"
         required
       />
+      <div className="flex flex-row pr-[58%]">
+        <h2 className="mb-12 text-[#989898]">Esqueceu sua senha?</h2>
+      </div>
+
 
       <Button text="Entrar" width={150} height={45} />
     </form>
