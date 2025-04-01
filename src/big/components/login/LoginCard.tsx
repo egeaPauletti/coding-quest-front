@@ -17,7 +17,7 @@ export default function LoginCard() {
       </header>
 
       <div className="flex mx-auto w-[90%] max-w-[1200px] h-auto  min-h-[600px] bg-[#fff] ring-[#3D3660] ring-2 shadow-2xl relative mb-20">
-        <div className="w-[100%] justify-center text-center pt-[12%]">
+        <div className="w-[100%] justify-center text-center pt-[10%]">
           <LoginForm />
         </div>
 
