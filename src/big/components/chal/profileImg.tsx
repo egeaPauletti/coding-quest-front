@@ -1,4 +1,4 @@
-import ImageProfile from "../assets/Bear.png";
+import ImageProfile from "../../assets/Bear.png";
 
 interface IconProps {
   size?: number;

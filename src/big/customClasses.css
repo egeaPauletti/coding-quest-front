@@ -153,7 +153,7 @@
 }
 
 .profileShadow {
-  box-shadow: 12px 12px 12px 0px rgba(27, 27, 27, 0.5);
+  box-shadow: 12px 12px 10px 0px rgba(27, 27, 27, 0.5);
 }
 
 .levelBar {

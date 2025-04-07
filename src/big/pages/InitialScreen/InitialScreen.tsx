@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import Button from "../../components/button";
+import Button from "../../components/Button";
 import Logo from "../../components/logo";
 import SliderItem from "../../components/slider/SliderItem";
 import JavaScriptIcon from "../../components/icons/iconsInitialScreen/JsIcon";
