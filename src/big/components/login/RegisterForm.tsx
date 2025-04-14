@@ -1,9 +1,9 @@
 import Button from "../Button";
 
-export default function LoginForm() {
+export default function RegisForm() {
   return <div className="flex-col">
     <div>
-      <h1 className="gradientText text-4xl font-bold pb-2">Acesse sua conta</h1>
+      <h1 className="gradientText text-4xl font-bold pb-2">Registre sua conta</h1>
       <h2 className="text-[#989898]">registre-se via</h2>
     </div>
 
@@ -25,12 +25,10 @@ export default function LoginForm() {
         placeholder="Senha"
         required
       />
-      <div className="flex flex-row pr-[58%]">
-        <h2 className="mb-12 text-[#989898]">Esqueceu sua senha?</h2>
+      <div className="pt-5">
+        <Button text="Registrar" width={150} height={45} />
       </div>
 
-
-      <Button text="Entrar" width={150} height={45} />
     </form>
 
   </div>
