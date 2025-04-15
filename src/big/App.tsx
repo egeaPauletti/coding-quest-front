@@ -1,10 +1,10 @@
-import HistoryModeScreen from "./pages/historyModeScreen/historyModeScreen";
+import HistoryModeChalScreen from "./pages/historyModeScreen/historyModeChalScreen";
 // import InitialScreen from "./pages/InitialScreen/InitialScreen";
 
 function App() {
   return (
     <>
-      <HistoryModeScreen />
+      <HistoryModeChalScreen />
       {/* <InitialScreen /> */}
     </>
   );
