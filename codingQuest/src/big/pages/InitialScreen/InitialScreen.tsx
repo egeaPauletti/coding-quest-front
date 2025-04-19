@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import Button from "../../components/Button";
 import Logo from "../../components/logo";
@@ -60,11 +61,15 @@ export default function InitialScreen() {
             </h1>
           </figure>
           <div className="flex gap-3 items-center">
-            <Button width={100} height={45} text="Entrar" />
+            <Link to="/login">
+              <Button width={100} height={45} text="Entrar" />
+            </Link>
             <span className="primaryColor text-xl font-bold">|</span>
-            <span className="primaryColor text-lg font-bold cursor-pointer">
-              Registrar
-            </span>
+            <Link to="/login">
+              <span className="primaryColor text-lg font-bold cursor-pointer">
+                Registrar
+              </span>
+            </Link>
           </div>
         </div>
         {/* --------- */}
@@ -83,10 +88,12 @@ export default function InitialScreen() {
               <br />
               prática e divertida!!!
             </span>
-            \
+
             <TypingText text="{Desafios do Inciante ao Avançado}" />
           </div>
-          <Button width={320} height={45} text="Comece a Programar" />
+          <Link to="/login">
+            <Button width={320} height={45} text="Comece a Programar" />
+          </Link>
         </div>
         {/* --------- */}
 

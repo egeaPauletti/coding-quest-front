@@ -38,6 +38,17 @@
 .buttonSecondColor {
   color: #4a3df9;
 }
+
+.gradientText {
+  background-image: linear-gradient(to right, #ffb24e, #d1768a, #7703ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.gradientBg {
+  background-image: linear-gradient(to right, #ffb24e, #d1768a, #7703ff);
+}
 /* ------- */
 
 /* Fonts */

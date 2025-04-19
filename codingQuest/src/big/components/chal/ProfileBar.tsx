@@ -17,7 +17,7 @@ const ProfileBar: React.FC<ComponentProps> = ({
 }) => {
   return (
     <>
-      <div className="flex flex-col gap-4 items-center justify-center rounded-3xl backgroundComponents pl-7 pr-10 pt-2.5 pb-5 profileShadow">
+      <div className="flex flex-col gap-4 items-center justify-center rounded-2xl backgroundComponents pl-7 pr-10 pt-2.5 pb-5 profileShadow">
         <div className="flex flex-col h-auto w-auto gap-2.5">
           <div className="flex h-auto w-auto items-center gap-2">
             <ImgComponent />

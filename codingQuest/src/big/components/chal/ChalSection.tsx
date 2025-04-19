@@ -1,3 +1,5 @@
+import Button from "../Button";
+
 export default function ChalSection() {
   return (
     <>
@@ -33,6 +35,12 @@ export default function ChalSection() {
               <span className="secondColor rocky">
                 Resolva o desafio diretamente na nossa IDE online
               </span>
+            </div>
+            <div className="flex justify-end">
+              <div className="flex gap-10 ">
+                <Button text="IDE" width={120} height={45} />
+                <Button text="Enviar" width={120} height={45} />
+              </div>
             </div>
           </div>
         </div>

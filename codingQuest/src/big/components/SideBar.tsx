@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import MapIcon from "./icons/iconsSideBar/MapIcon";
 import Logo from "./icons/logo";
 import LeaderIcon from "./icons/iconsSideBar/LeaderIcon";
@@ -11,16 +12,22 @@ export default function SideBar() {
       <div className="flex flex-col items-center justify-center w-[7%] h-full backgroundComponents rounded-tl-2xl rounded-bl-2xl sideBarHover">
         <div className=" flex flex-col items-center justify-between h-[90%]">
           <div className="flex flex-col items-center gap-20 relative">
-            <figure className="flex items-center titleHover">
-              <Logo size={70} />
-            </figure>
+            <Link to="/choseMode">
+              <figure className="flex items-center titleHover">
+                <Logo size={70} />
+              </figure>
+            </Link>
             <div className="flex flex-col items-center gap-5 relative">
-              <button className="flex gap-7 items-center calendarHover">
-                <CalendarIcon size="35" />
-              </button>
-              <button className="flex gap-7 items-center mapHover">
-                <MapIcon size="35" />
-              </button>
+              <Link to="/diaryChal">
+                <button className="flex gap-7 items-center calendarHover">
+                  <CalendarIcon size="35" />
+                </button>
+              </Link>
+              <Link to="/historyMode">
+                <button className="flex gap-7 items-center mapHover">
+                  <MapIcon size="35" />
+                </button>
+              </Link>
               <button className="flex gap-7 items-center leaderHover">
                 <LeaderIcon size="35" />
               </button>

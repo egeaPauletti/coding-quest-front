@@ -1,4 +1,3 @@
-import "./index.css";
 import "../../customClasses.css";
 import SideBar from "../../components/SideBar";
 import WorldsMap from "../../components/chal/ChalWorlds";
@@ -11,17 +10,14 @@ export default function HistoryModeScreen() {
           <div>
             <SideBar />
           </div>
-          <div className="flex w-[90%] h-[100%] items-center justify-center">
+          <div className="flex items-center justify-center">
             <div className=" flex w-[100%] h-[100%] justify-around items-center">
               <div className="flex flex-col h-[100%] justify-around">
-                <div className="w-max h-max">
-
-                </div>
-                <div className="relative -top-[6%]">
+                <div className="w-max h-max"></div>
+                <div>
                   <WorldsMap completedWorlds={0} />
                 </div>
               </div>
-
             </div>
           </div>
         </div>
