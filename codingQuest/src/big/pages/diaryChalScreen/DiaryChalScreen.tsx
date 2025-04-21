@@ -81,7 +81,7 @@ export default function DiaryChallScreen() {
                     <h1 className="text-sm text-white uppercase">
                       desafio do dia
                     </h1>
-                    <span className="text-sm font-bold text-white">
+                    <span className="text-sm font-bold text-white uppercase">
                       hello world
                     </span>
                   </div>
