@@ -30,3 +30,17 @@
     background-color: #3d3f45;
   }
 }
+
+.formInput {
+  width: 100%;
+  width: 800px; /* Largura máxima */
+  height: 200px; /* Altura fixa */
+  resize: none; /* Impede o redimensionamento manual */
+  overflow-y: auto; /* Scroll vertical automático */
+  padding: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  line-height: 1.4;
+}

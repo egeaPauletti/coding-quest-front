@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "../Button";
 
 interface levelProps {
@@ -7,6 +8,34 @@ interface levelProps {
 }
 
 const ChalSection: React.FC<levelProps> = ({ title, level, chal }) => {
+  const [input, setInput] = useState("");
+  const [resposta, setResposta] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const enviarPrompt = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setResposta("");
+
+    const prompt = `
+           Dado o exercicio: ${chal}\n\n
+            resposta:${input}\n\n  Verifique se a resposta condiz com uma resolução correta do exercicio proposto, a avaliação deverá dizer se o programa funcionárá corretamente ou se não`;
+    try {
+      const response = await fetch("http://localhost:3000/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt }),
+      });
+
+      const text = await response.text();
+      setResposta(text);
+    } catch (error) {
+      setResposta("<p>Erro ao se comunicar com a IA.</p>");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <div className="flex flex-col gap-15 w-max h-max backgroundComponents p-[4%] rounded-2xl text-xl profileShadow">
@@ -31,19 +60,32 @@ const ChalSection: React.FC<levelProps> = ({ title, level, chal }) => {
             </div>
             <div className="flex flex-col gap-3 ">
               <span className="secondColor rocky">Envie sua resolução</span>
-              <input
-                className="flex bg-[#434249]  p-2.5 w-200  h-40 primaryColor"
-                type="text"
-              />
-              <span className="secondColor rocky">
-                Resolva o desafio diretamente na nossa IDE online
-              </span>
-            </div>
-            <div className="flex justify-end">
-              <div className="flex gap-10 ">
-                <Button text="IDE" width={120} height={45} />
-                <Button text="Enviar" width={120} height={45} />
-              </div>
+              <form onSubmit={enviarPrompt} className="flex flex-col">
+                <input
+                  className="formInput"
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  placeholder="Resposta"
+                  required
+                />
+                <span className="secondColor rocky">
+                  Resolva o desafio diretamente na nossa IDE online
+                </span>
+                <div className="flex justify-end">
+                  <div className="flex gap-10 ">
+                    <Button text="IDE" width={120} height={45} />
+                    <button type="submit" disabled={loading}>
+                      <Button
+                        text={loading ? "Enviando..." : "Enviar"}
+                        width={120}
+                        height={45}
+                      />
+                    </button>
+                  </div>
+                </div>
+                <h1>{resposta}</h1>
+              </form>
             </div>
           </div>
         </div>
