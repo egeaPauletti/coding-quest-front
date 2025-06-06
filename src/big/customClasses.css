@@ -209,3 +209,18 @@
 .slick-slide:hover {
   transform: translateY(-5px);
 }
+
+.resAnimation {
+  animation: ResAnimation 0.5s ease-in-out forwards;
+}
+
+@keyframes ResAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

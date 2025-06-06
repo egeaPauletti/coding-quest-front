@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "../Button";
+import AIRes from "./AIRes";
 
 interface levelProps {
   title: string;
@@ -19,7 +20,7 @@ const ChalSection: React.FC<levelProps> = ({ title, level, chal }) => {
 
     const prompt = `
            Dado o exercicio: ${chal}\n\n
-            resposta:${input}\n\n  Verifique se a resposta condiz com uma resolução correta do exercicio proposto, a avaliação deverá dizer se o programa funcionárá corretamente ou se não`;
+            resposta:${input}\n\n  Verifique se a resposta condiz com uma resolução correta do exercicio proposto, a avaliação deverá dizer se o programa funcionárá corretamente ou se não,(a lingugem escolhida não é especificada então reconheça a lingugem e veja se funciona seu código)`;
     try {
       const response = await fetch("http://localhost:3000/api/chat", {
         method: "POST",
@@ -29,8 +30,15 @@ const ChalSection: React.FC<levelProps> = ({ title, level, chal }) => {
 
       const text = await response.text();
       setResposta(text);
+
+      console.log("Resposta da IA:", text);
+
+      setTimeout(() => {
+        setResposta("");
+      }, 5000);
+      // Limpa a resposta após 5 segundos
     } catch (error) {
-      setResposta("<p>Erro ao se comunicar com a IA.</p>");
+      setResposta("Erro ao se comunicar com a IA.");
     } finally {
       setLoading(false);
     }
@@ -74,7 +82,6 @@ const ChalSection: React.FC<levelProps> = ({ title, level, chal }) => {
                 </span>
                 <div className="flex justify-end">
                   <div className="flex gap-10 ">
-                    <Button text="IDE" width={120} height={45} />
                     <button type="submit" disabled={loading}>
                       <Button
                         text={loading ? "Enviando..." : "Enviar"}
@@ -84,7 +91,7 @@ const ChalSection: React.FC<levelProps> = ({ title, level, chal }) => {
                     </button>
                   </div>
                 </div>
-                <h1>{resposta}</h1>
+                {resposta !== "" && <AIRes resp={resposta} />}
               </form>
             </div>
           </div>

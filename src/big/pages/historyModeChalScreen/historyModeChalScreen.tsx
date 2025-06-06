@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 
 export default function HistoryModeChalScreen() {
   const [level, setLevel] = useState("1");
-  const [title, setTitle] = useState(`{"Hello, World!"}`);
+  const [title, setTitle] = useState(`{"Hello World!"}`);
   const [chal, setChal] = useState(
-    `//Faça um código que de um print escrevendo ${"Hello, World!"} na tela. `
+    `//Faça um código que de um print escrevendo ${"Hello World!"} na tela. `
   );
 
   const handleButtonClick = (
@@ -66,7 +66,7 @@ export default function HistoryModeChalScreen() {
                           <LevelBar
                             title="Hello World"
                             level="Level 1"
-                            completed="{Concluido}"
+                            completed="{incompleto}"
                           ></LevelBar>
                         </button>
 
@@ -82,7 +82,7 @@ export default function HistoryModeChalScreen() {
                           <LevelBar
                             title="Somando Dois Números"
                             level="Level 2"
-                            completed="{Concluido}"
+                            completed="{incompleto}"
                           ></LevelBar>
                         </button>
 
@@ -98,7 +98,7 @@ export default function HistoryModeChalScreen() {
                           <LevelBar
                             title="Multiplicando por 3"
                             level="Level 3"
-                            completed="{Concluido}"
+                            completed="{incompleto}"
                           ></LevelBar>
                         </button>
 
@@ -114,7 +114,7 @@ export default function HistoryModeChalScreen() {
                           <LevelBar
                             title="Somando Dois Números"
                             level="Level 4"
-                            completed="{Concluido}"
+                            completed="{incompleto}"
                           ></LevelBar>
                         </button>
 
@@ -130,7 +130,7 @@ export default function HistoryModeChalScreen() {
                           <LevelBar
                             title="Par ou Ímpar"
                             level="Level 5"
-                            completed="{Concluido}"
+                            completed="{incompleto}"
                           ></LevelBar>
                         </button>
 
@@ -162,7 +162,7 @@ export default function HistoryModeChalScreen() {
                           <LevelBar
                             title="Comparando Dois Valores"
                             level="Level 7"
-                            completed="{Concluido}"
+                            completed="{incompleto}"
                           ></LevelBar>
                         </button>
                       </div>

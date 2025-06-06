@@ -13,37 +13,37 @@ export default function LevelsSection() {
             <LevelBar
               title="Hello World"
               level="Level 1"
-              completed="{Concluido}"
+              completed="{incompleto}"
             ></LevelBar>
             <LevelBar
               title="Hello World"
               level="Level 2"
-              completed="{Concluido}"
+              completed="{incompleto}"
             ></LevelBar>
             <LevelBar
               title="Hello World"
               level="Level 3"
-              completed="{Concluido}"
+              completed="{incompleto}"
             ></LevelBar>
             <LevelBar
               title="Hello World"
               level="Level 4"
-              completed="{Concluido}"
+              completed="{incompleto}"
             ></LevelBar>
             <LevelBar
               title="Hello World"
               level="Level 5"
-              completed="{Concluido}"
+              completed="{incompleto}"
             ></LevelBar>
             <LevelBar
               title="Hello World"
               level="Level 6"
-              completed="{Concluido}"
+              completed="{incompleto}"
             ></LevelBar>
             <LevelBar
               title="Hello World"
               level="Level 7"
-              completed="{Concluido}"
+              completed="{incompleto}"
             ></LevelBar>
           </div>
         </div>
