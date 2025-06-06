@@ -34,7 +34,7 @@ export default function RegisForm() {
       if (actualToken && typeof actualToken === 'string') {
         setClientAuthCookie(actualToken);
 
-        window.location.href = '/';
+        window.location.href = '/choseMode';
 
       } else {
         throw new Error('Token not received or invalid format');

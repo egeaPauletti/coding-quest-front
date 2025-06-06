@@ -1,5 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import Api from "../../../api/api";
 import { LoginUserSchema, LoginUserSchemaInput } from "../../../schemas/User";
 import Button from "../Button";
@@ -24,7 +25,9 @@ export default function LoginForm() {
         body: JSON.stringify(data)
       })
 
+
       if (!response.ok) {
+        toast.error("Senha ou nome inválidos")
         throw new Error(`HTTP error! status: ${response.status}`)
       }
 
@@ -35,7 +38,8 @@ export default function LoginForm() {
       if (actualToken && typeof actualToken === 'string') {
         setClientAuthCookie(actualToken);
 
-        window.location.href = '/';
+        toast.success("Login realizado com sucesso!")
+        window.location.href = '/choseMode';
 
       } else {
         throw new Error('Token not received or invalid format');
