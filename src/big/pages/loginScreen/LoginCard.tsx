@@ -15,7 +15,7 @@ export default function LoginCard() {
     <div className=" w-screen h-screen flex flex-col">
       {isFlipped ? (
         <div className="flex mx-auto w-[90%] max-w-[1200px] h-auto min-h-[600px] bg-[#fff] ring-[#3D3660] ring-2 shadow-2xl relative my-auto transition-all duration-500 ease-in-out">
-          <div className="bg-[url(./background/backgroundLoginCard.png)] justify-center text-center w-[60%] pt-[10%] transition-all duration-500 ease-in-out">
+          <div className="bg-[url('/background/backgroundLoginCard.png')] justify-center text-center w-[60%] pt-[10%] transition-all duration-500 ease-in-out">
             <div className="flex-col text-center p-6">
               <h1 className="gradientText text-transparent bg-clip-text text-4xl font-bold font-">
                 Bem Vindo!
@@ -55,7 +55,7 @@ export default function LoginCard() {
             <LoginForm />
           </div>
 
-          <div className="flex flex-col bg-[url(./background/backgroundLoginCard.png)] bg-cover w-[60%] pt-[10%] transition-all duration-500 ease-in-out">
+          <div className="flex flex-col bg-[url('/background/backgroundLoginCard.png')] bg-cover w-[60%] pt-[10%] transition-all duration-500 ease-in-out">
             <div className="flex flex-col text-center p-6">
               <h1 className="gradientText text-transparent bg-clip-text text-4xl font-bold font-">
                 Bem Vindo!
