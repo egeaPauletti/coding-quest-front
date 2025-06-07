@@ -7,50 +7,45 @@ import Button from "../Button";
 import { setClientAuthCookie } from "../utils/clientCookie";
 
 export default function LoginForm() {
-
-  const { register,
+  const {
+    register,
     handleSubmit,
     formState: { errors },
   } = useForm<LoginUserSchemaInput>({
-    resolver: zodResolver(LoginUserSchema)
-  })
+    resolver: zodResolver(LoginUserSchema),
+  });
 
   const handleLoginSubmit = async (data: LoginUserSchemaInput) => {
     try {
       const response = await fetch(Api("user/login"), {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(data)
-      })
-
+        body: JSON.stringify(data),
+      });
 
       if (!response.ok) {
-        toast.error("Senha ou nome inválidos")
-        throw new Error(`HTTP error! status: ${response.status}`)
+        toast.error("Senha ou nome inválidos");
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const result = await response.json()
+      const result = await response.json();
 
-      const actualToken = result.data?.access_token
+      const actualToken = result.data?.access_token;
 
-      if (actualToken && typeof actualToken === 'string') {
+      if (actualToken && typeof actualToken === "string") {
         setClientAuthCookie(actualToken);
 
-        toast.success("Login realizado com sucesso!")
-        window.location.href = '/choseMode';
-
+        toast.success("Login realizado com sucesso!");
+        window.location.href = "/choseMode";
       } else {
-        throw new Error('Token not received or invalid format');
+        throw new Error("Token not received or invalid format");
       }
-
     } catch (error) {
       console.log(error);
-
     }
-  }
-
+  };
 
   return (
     <div className="flex-col">
@@ -63,16 +58,10 @@ export default function LoginForm() {
 
       <div className="flex flex-row justify-center items-center p-4 gap-4">
         <a href="">
-          <img
-            src="../../../../public/icons/googleIcon.png"
-            className="w-auto"
-          />
+          <img src="../../../../icons/googleIcon.png" className="w-auto" />
         </a>
         <a href="">
-          <img
-            src="../../../../public/icons/githubIcon.png"
-            className="w-auto"
-          />
+          <img src="../../../../icons/githubIcon.png" className="w-auto" />
         </a>
       </div>
 
@@ -86,25 +75,29 @@ export default function LoginForm() {
           className="w-[80%] h-14 px-6 py-2 bg-[#D9D9D9] rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#7703FF] mb-6 placeholder-[#989898]"
           placeholder="Usuário"
           required
-          {...register('name')}
+          {...register("name")}
         />
-        <span className="text-red-500 text-sm mb-4 self-start ml-[10%]">{errors?.name?.message}</span>
+        <span className="text-red-500 text-sm mb-4 self-start ml-[10%]">
+          {errors?.name?.message}
+        </span>
 
         <input
           type="password"
           className="w-[80%] h-14 px-6 py-2 bg-[#D9D9D9] rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#7703FF] placeholder-[#989898]"
           placeholder="Senha"
           required
-          {...register('password')}
+          {...register("password")}
         />
 
-        <span className="text-red-500 text-sm mb-4 self-start ml-[10%]">{errors?.password?.message}</span>
+        <span className="text-red-500 text-sm mb-4 self-start ml-[10%]">
+          {errors?.password?.message}
+        </span>
 
         <div className="flex flex-row pr-[58%]">
           <h2 className="mb-12 text-[#989898]">Esqueceu sua senha?</h2>
         </div>
         <div>
-          <Button type='submit' text="Entrar" width={150} height={45} />
+          <Button type="submit" text="Entrar" width={150} height={45} />
         </div>
       </form>
     </div>
