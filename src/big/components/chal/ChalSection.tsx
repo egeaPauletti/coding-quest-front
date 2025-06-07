@@ -14,8 +14,7 @@ const ChalSection: React.FC<levelProps> = ({ title, level, chal }) => {
   const [resposta, setResposta] = useState("");
   const [loading, setLoading] = useState(false);
 
-
-  const enviarPrompt = async (e) => {
+  const enviarPrompt = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setResposta("");
@@ -39,8 +38,9 @@ const ChalSection: React.FC<levelProps> = ({ title, level, chal }) => {
         setResposta("");
       }, 5000);
       // Limpa a resposta após 5 segundos
-    } catch (error) {
+    } catch (error: unknown) {
       setResposta("Erro ao se comunicar com a IA.");
+      console.log(error);
     } finally {
       setLoading(false);
     }
@@ -66,9 +66,7 @@ const ChalSection: React.FC<levelProps> = ({ title, level, chal }) => {
           <div className="flex flex-col gap-5 backgroundComponents2 pr-15 pl-[4%] pt-[2.5%] pb-[5%] rounded-xl purpleBar">
             <div className="flex flex-col gap-2">
               <span className="secondColor rocky">Proposta de Desafio</span>
-              <span className="primaryColor text-lg">
-                {chal}
-              </span>
+              <span className="primaryColor text-lg">{chal}</span>
             </div>
             <div className="flex flex-col gap-3 ">
               <span className="secondColor rocky">Envie sua resolução</span>
