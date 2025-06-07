@@ -1,12 +1,11 @@
-import "./index.css";
-import "../../customClasses.css";
 import SideBar from "../../components/SideBar";
 import ProfileBar from "../../components/chal/ProfileBar";
 import ProfileImg from "../../components/chal/profileImg";
+import { useState } from "react";
+import "../../customClasses.css";
+import "./index.css";
 import LevelBar from "../../components/chal/LevelBar";
 import Button from "../../components/Button";
-import ChalSection from "../../components/chal/ChalSection";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function HistoryModeChalScreen() {
@@ -29,14 +28,14 @@ export default function HistoryModeChalScreen() {
   return (
     <>
       <div className="flex items-center justify-center w-screen h-screen">
-        <div className="flex w-[95%] h-[90%] items-center rounded-3xl backgroundColor gap-20  profileShadow relative">
+        <div className="flex w-[95%] h-[90%] justify-center  items-center rounded-3xl backgroundColor gap-20  profileShadow relative">
           <div>
             <SideBar />
           </div>
           <div className="flex w-[90%] h-[100%] items-center justify-center">
-            <div className=" flex w-[100%] h-[100%] justify-around">
+            <div className=" flex w-[100%] h-[100%] justify-around items-center">
               <div className="flex flex-col h-[100%] justify-around">
-                <div className="w-max h-max relative top-[1%]">
+                <div className="w-max h-max">
                   <ProfileBar
                     profileFoto={() => <ProfileImg size={40} />}
                     username="JorginCodigos"
@@ -179,6 +178,7 @@ export default function HistoryModeChalScreen() {
                   </div>
                 </div>
               </div>
+              <div className="bg-black w-120 h-170 rounded-3xl"></div>
             </div>
           </div>
         </div>
