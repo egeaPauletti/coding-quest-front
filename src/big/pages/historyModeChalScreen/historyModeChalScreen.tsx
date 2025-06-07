@@ -1,16 +1,17 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Button from "../../components/Button";
 import SideBar from "../../components/SideBar";
+import ChalSection from "../../components/chal/ChalSection";
+import LevelBar from "../../components/chal/LevelBar";
 import ProfileBar from "../../components/chal/ProfileBar";
 import ProfileImg from "../../components/chal/profileImg";
-import { useState } from "react";
 import "../../customClasses.css";
 import "./index.css";
-import LevelBar from "../../components/chal/LevelBar";
-import Button from "../../components/Button";
-import { Link } from "react-router-dom";
 
 export default function HistoryModeChalScreen() {
   const [level, setLevel] = useState("1");
-  const [title, setTitle] = useState(`{"Hello World!"}`);
+  const [title, setTitle] = useState(`"Hello World!"`);
   const [chal, setChal] = useState(
     `//Faça um código que de um print escrevendo ${"Hello World!"} na tela. `
   );
@@ -57,7 +58,7 @@ export default function HistoryModeChalScreen() {
                           onClick={() =>
                             handleButtonClick(
                               "1",
-                              `{"Hello, World!"}`,
+                              `"Hello, World!"`,
                               `//Faça um código que de um print escrevendo ${"Hello, World!"} na tela. `
                             )
                           }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Api from "../../../api/api";
 import Button from "../Button";
 import AIRes from "./AIRes";
 
@@ -13,16 +14,17 @@ const ChalSection: React.FC<levelProps> = ({ title, level, chal }) => {
   const [resposta, setResposta] = useState("");
   const [loading, setLoading] = useState(false);
 
+
   const enviarPrompt = async (e) => {
     e.preventDefault();
     setLoading(true);
     setResposta("");
 
-    const prompt = `
-           Dado o exercicio: ${chal}\n\n
-            resposta:${input}\n\n  Verifique se a resposta condiz com uma resolução correta do exercicio proposto, a avaliação deverá dizer se o programa funcionárá corretamente ou se não,(a lingugem escolhida não é especificada então reconheça a lingugem e veja se funciona seu código)`;
+    const prompt = `Dado o exercicio: ${chal}\n\n
+            resposta:${input}\n\n  Verifique se a resposta condiz com uma resolução correta do exercicio proposto,
+            a avaliação deverá dizer se o programa funcionárá corretamente ou se não,(a lingugem escolhida não é especificada então reconheça a lingugem e veja se funciona seu código) IMPORTANTE: devolva apenas o texto da resposta sem tag nenhuma`;
     try {
-      const response = await fetch("http://localhost:3000/api/chat", {
+      const response = await fetch(Api("chat"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt }),
@@ -51,9 +53,9 @@ const ChalSection: React.FC<levelProps> = ({ title, level, chal }) => {
           <div className="w-full h-full ">
             <div className="flex justify-between font-semibold text-2xl backgroundComponents2  pl-[4%] pr-5 pt-5 pb-5 rounded-xl purpleBar ">
               <div className="flex secondColor gap-2.5">
-                <span>Level 1</span>
+                <span>{`level ${level}`}</span>
                 <span>|</span>
-                <span>Hello world</span>
+                <span>{`${title}`}</span>
               </div>
               <span className="secondColor">30 XP</span>
             </div>
@@ -65,8 +67,7 @@ const ChalSection: React.FC<levelProps> = ({ title, level, chal }) => {
             <div className="flex flex-col gap-2">
               <span className="secondColor rocky">Proposta de Desafio</span>
               <span className="primaryColor text-lg">
-                // Faça um algortimo que imprima a mesagem "Hello, World!" na
-                tela.
+                {chal}
               </span>
             </div>
             <div className="flex flex-col gap-3 ">
@@ -87,6 +88,7 @@ const ChalSection: React.FC<levelProps> = ({ title, level, chal }) => {
                   <div className="flex gap-10 ">
                     <button type="submit" disabled={loading}>
                       <Button
+                        type="submit"
                         text={loading ? "Enviando..." : "Enviar"}
                         width={120}
                         height={45}
