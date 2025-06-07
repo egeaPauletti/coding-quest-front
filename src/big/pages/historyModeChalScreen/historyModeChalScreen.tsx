@@ -6,6 +6,7 @@ import ChalSection from "../../components/chal/ChalSection";
 import LevelBar from "../../components/chal/LevelBar";
 import ProfileBar from "../../components/chal/ProfileBar";
 import ProfileImg from "../../components/chal/profileImg";
+import { useAuth } from "../../components/hooks/useAuth";
 import "../../customClasses.css";
 import "./index.css";
 
@@ -15,6 +16,8 @@ export default function HistoryModeChalScreen() {
   const [chal, setChal] = useState(
     `//Faça um código que de um print escrevendo ${"Hello World!"} na tela. `
   );
+
+  const user = useAuth()
 
   const handleButtonClick = (
     newLevel: string,
@@ -39,7 +42,7 @@ export default function HistoryModeChalScreen() {
                 <div className="w-max h-max">
                   <ProfileBar
                     profileFoto={() => <ProfileImg size={40} />}
-                    username="JorginCodigos"
+                    username={user?.name ? user.name : ''}
                     level="Lvl 12"
                     xpTotal={300}
                     userXp={150}
@@ -179,7 +182,6 @@ export default function HistoryModeChalScreen() {
                   </div>
                 </div>
               </div>
-              <div className="bg-black w-120 h-170 rounded-3xl"></div>
             </div>
           </div>
         </div>
