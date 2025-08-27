@@ -8,7 +8,11 @@ export interface BtnProps {
   onClick?: () => void;
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;
-
+  
+export interface FloatingSquareProps {
+  isLogin?: boolean;
+}
+  
 export interface TypingTextProps {
   text: string;
   speed?: number;
@@ -27,7 +31,9 @@ export interface SquareData {
   className?: string; // <- nova propriedade
 }
   
-export interface FloatingSquareProps {
-  isLogin?: boolean;
-}
+export interface OptionProps {
+  Icon: React.ReactNode;
+  title: string;
+  isCurrent?: boolean;
+  open: boolean;
 }
