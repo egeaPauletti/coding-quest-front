@@ -1,69 +1,47 @@
-# React + TypeScript + Vite
+<h1 align="center">CODING QUEST</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+    <img src="https://skillicons.dev/icons?i=react,typescript,tailwind" />
+</p>
+<div align="center">
+  Um projeto React, Typescript e Tailwind!
+</div>
+<div>
+<h1 align="center"></h1>
+</div>
+<img src="/public/repoImg.png" alt="imagem da tela inicial da codinquest">
 
-Currently, two official plugins are available:
+> Este repositório é o front end da plataforma gamificada CODING QUETS: que torna o aprendizado da lógica de programação mais acessível e divertido. A proposta é ajudar iniciantes a desenvolverem suas habilidades de raciocínio lógico através de desafios interativos, missões e um sistema de progressão baseado em recompensas. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Ajustes e melhorias
 
-## Expanding the ESLint configuration
+O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas para as seguintes tarefas:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [x] Refatorar o design da tela "Apresentação da Plataforma"
+- [x] Refatorar o design da tela "Modo Campanha - Escolha de Mundo"
+- [x] Refatorar o design da tela "Modo Campanha - Mundo"
+- [x] Implementar IDE para resolução dos desafios
+- [ ] Refatorar o design da tela "Desafio Diario"
+- [ ] Refatorar o design da tela "Home"
+- [ ] Criar tela "Perfil do Usúario"
+- [ ] Adicionar Sistema de Recompença e XP
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 💻 Pré-requisitos
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Você instalou a versão mais recente de `<node / npm>`
+- Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
+
+## 🚀 Instalando a Coding Quest
+
+Para instalar a Coding Quest, siga estas etapas:
+
+Windows, Linux e macOS:
+
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+git clone https://github.com/egeaPauletti/coding-quest-front.git
+cd coding-quest-front
+npm install
+npm run dev
 ```
