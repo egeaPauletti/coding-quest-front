@@ -2,6 +2,8 @@ import "./animations/animations.css";
 import "./index.css";
 //
 import { Route, Routes } from "react-router-dom";
+//
+import DiaryChal from "./pages/diaryChal";
 import HomeScreen from "./pages/homeScreen";
 import AuthScreen from "./pages/authScreen";
 import InitialScreen from "./pages/initialScreen";
@@ -14,7 +16,7 @@ function App() {
       <Route path="/about" element={<AboutScreen/>} />
       <Route path="/login" element={<AuthScreen/>} />
       <Route path="/home" element={<HomeScreen/>} />
-      <Route path="/diaryChal" element="" />
+      <Route path="/diaryChal" element={<DiaryChal/>} />
       <Route path="/campaign" element="" />
       <Route path="/worlds/*" element="" />
     </Routes>

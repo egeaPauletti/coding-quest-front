@@ -16,7 +16,7 @@ export interface FloatingSquareProps {
 export interface TypingTextProps {
   text: string;
   speed?: number;
-};
+}
 
 export interface WaveTextProps {
   text: string;
@@ -36,4 +36,5 @@ export interface OptionProps {
   title: string;
   isCurrent?: boolean;
   open: boolean;
+}
 }
