@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+.backgroundAuth {
+  background-color: #202020;
+  background-size: cover;
+}
+
+.main-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.slider-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background-image: url("../../assets/backgrounds/backgroundLogin.png");
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: left 0.5s ease-in-out;
+}
+
+.forms-container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.form {
+  width: 60%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: transparent;
+}
+
+.right-active .slider-panel {
+  left: 60%;
+}
+
+.right-active .forms-container {
+  transform: translateX(-40%);
+}
+
+.animationFadeInAuth {
+  animation: fadeIn 3s;
+}
+
+.square {
+  background-color: #96969625;
+  border-radius: 10px;
+  position: absolute;
+  padding: 10px;
+  transition: none;
+  opacity: 1;
+  animation: floatingSquares 3s ease-in-out infinite;
+}
+
+.squareOp50 {
+  background-color: #96969625;
+  border-radius: 10px;
+  position: absolute;
+  padding: 10px;
+  transition: none;
+  opacity: 0.5;
+  /* animation: floatingSquares 3s ease-in-out infinite; */
+}
+
+.squareBorder {
+  background-color: transparent;
+  border: #96969625 solid 2px;
+  border-radius: 10px;
+  position: absolute;
+  padding: 10px;
+  transition: none;
+  opacity: 0.5;
+  /* animation: floatingSquares 3s ease-in-out infinite; */
+}

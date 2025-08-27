@@ -1,3 +1,16 @@
+export const WorldsDataSection = [
+  { id: "1", worldName: "Fundamentos" },
+  { id: "2", worldName: "Estruturas de repetição" },
+  { id: "3", worldName: "Condições compostas" },
+  { id: "4", worldName: "Vetores (arrays)" },
+  { id: "5", worldName: "Matrizes" },
+  { id: "6", worldName: "Strings" },
+  { id: "7", worldName: "Algoritmos intermediários" },
+  { id: "8", worldName: "Estruturas avançadas" },
+  { id: "9", worldName: "Algoritmos clássicos" },
+  { id: "10", worldName: "Desafios avançados" },
+];
+
 export const LANGUAGE_VERSIONS = {
   javascript: "18.15.0",
   php: "8.2.3",
@@ -16,19 +29,6 @@ export const CODE_SNIPPETS = {
     'using System;\n\nnamespace HelloWorld\n{\n\tclass Hello { \n\t\tstatic void Main(string[] args) {\n\t\t\tConsole.WriteLine("Hello World in C#");\n\t\t}\n\t}\n}\n',
   php: "<?php\n\n$name = 'Alex';\necho $name;\n",
 };
-
-export const WorldsDataSection = [
-  { id: "1", worldName: "Fundamentos" },
-  { id: "2", worldName: "Estruturas de repetição" },
-  { id: "3", worldName: "Condições compostas" },
-  { id: "4", worldName: "Vetores (arrays)" },
-  { id: "5", worldName: "Matrizes" },
-  { id: "6", worldName: "Strings" },
-  { id: "7", worldName: "Algoritmos intermediários" },
-  { id: "8", worldName: "Estruturas avançadas" },
-  { id: "9", worldName: "Algoritmos clássicos" },
-  { id: "10", worldName: "Desafios avançados" },
-];
 
 export const challenges = [
   // 🌍 Mundo 1 - Introdução

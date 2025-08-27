@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+.backgroundWorlds1 {
+  background-image: url(../../assets/backgrounds/sliderWorlds/backgroundWorlds1.png);
+  background-size: cover;
+}
+.backgroundWorlds2 {
+  background-image: url(../../assets/backgrounds/sliderWorlds/backgroundWorlds3.png);
+  background-size: cover;
+}
+.backgroundWorlds3 {
+  background-image: url(../../assets/backgrounds/sliderWorlds/backgroundWorlds2.png);
+  background-size: cover;
+}
+.backgroundWorlds4 {
+  background-image: url(../../assets/backgrounds/sliderWorlds/backgroundWorlds4.png);
+  background-size: cover;
+}
+.backgroundWorlds5 {
+  background-image: url(../../assets/backgrounds/sliderWorlds/backgroundWorlds5.png);
+  background-size: cover;
+}
+
+.animationDelayWorlds1 {
+  animation-delay: 0;
+}
+.animationDelayWorlds2 {
+  animation-delay: 0.5s;
+}
+.animationDelayWorlds3 {
+  animation-delay: 1s;
+}
+.animationDelayWorlds4 {
+  animation-delay: 1.5s;
+}
+.animationDelayWorlds5 {
+  animation-delay: 2s;
+}

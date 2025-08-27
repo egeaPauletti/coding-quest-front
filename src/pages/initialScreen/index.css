@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+.square {
+  background-color: #96969625;
+  border-radius: 10px;
+  position: absolute;
+  padding: 10px;
+  transition: none;
+  opacity: 1;
+  animation: floatingSquares 3s ease-in-out infinite;
+}
+
+.squareOp50 {
+  background-color: #96969625;
+  border-radius: 10px;
+  position: absolute;
+  padding: 10px;
+  transition: none;
+  opacity: 0.5;
+  /* animation: floatingSquares 3s ease-in-out infinite; */
+}
+
+.squareBorder {
+  background-color: transparent;
+  border: #96969625 solid 2px;
+  border-radius: 10px;
+  position: absolute;
+  padding: 10px;
+  transition: none;
+  opacity: 0.5;
+  /* animation: floatingSquares 3s ease-in-out infinite; */
+}
+
+.underlineAnimado {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.underlineAnimado::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 2px;
+  bottom: -1%;
+  left: 10%;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
+}
+
+.underlineAnimado:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
