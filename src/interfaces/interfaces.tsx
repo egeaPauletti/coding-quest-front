@@ -29,9 +29,9 @@ export interface SquareData {
   width: number;
   height: number;
   icon?: React.ReactNode;
-  className?: string; // <- nova propriedade
+  className?: string;
 }
-  
+ 
 export interface OptionProps {
   Icon: React.ReactNode;
   title: string;
@@ -39,7 +39,12 @@ export interface OptionProps {
   open: boolean;
 }
 
-export interface WorldsData {
+  export interface WorldsData {
   id: string;
   worldName: string;
+}
+  
+export interface ChallegesData {
+  worldId: string;
+  chal: string;
 }
