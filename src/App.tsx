@@ -2,6 +2,7 @@ import "./animations/animations.css";
 import "./index.css";
 //
 import { Route, Routes } from "react-router-dom";
+import WorldScreen from "./pages/worldScreen";
 //
 //
 //
@@ -16,7 +17,7 @@ function App() {
       <Route path="/home" element="" />
       <Route path="/diaryChal" element="" />
       <Route path="/campaign" element="" />
-      <Route path="/worlds/*" element="" />
+      <Route path="/worlds/*" element={<WorldScreen/>} />
     </Routes>
   );
 }
