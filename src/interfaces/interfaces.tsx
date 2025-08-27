@@ -8,7 +8,8 @@ export interface BtnProps {
   onClick?: () => void;
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;
-  
+}
+        
 export interface FloatingSquareProps {
   isLogin?: boolean;
 }
@@ -37,4 +38,8 @@ export interface OptionProps {
   isCurrent?: boolean;
   open: boolean;
 }
+
+export interface WorldsData {
+  id: string;
+  worldName: string;
 }
