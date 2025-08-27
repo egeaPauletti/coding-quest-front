@@ -1,11 +1,95 @@
 @import "tailwindcss";
+
 body {
-  font-family: "Roboto" sans-serif;
-  background-image: url(./big/assets/backgroundInitial.png);
-  background-size: 100%;
-  overflow-x: hidden;
+  background-image: url(./assets/backgrounds/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
 }
 
-input:focus {
-  outline: none;
+/* Fonts */
+.ibm {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Collors */
+
+:root {
+  --primary-color: #2ea98c;
+  --white-color: #f1f7f7;
+  --second-color: #222222;
+  --third-color: #111111;
+  --fourth-color: #212121;
+  --side-title-color: #404040;
+}
+
+/* Primary Color */
+.primaryColor {
+  color: var(--primary-color);
+}
+.bgPrimaryColor {
+  background-color: var(--primary-color);
+}
+
+/* White Color */
+.whiteColor {
+  color: var(--white-color);
+}
+
+.secondColor {
+  color: var(--second-color);
+}
+
+.bgSecondColor {
+  background-color: var(--second-color);
+}
+
+.thirdColor {
+  color: var(--third-color);
+}
+.bgThirdColor {
+  background-color: var(--third-color);
+}
+
+.fourthColor {
+  color: var(--fourth-color);
+}
+.bgFourthColor {
+  background-color: var(--fourth-color);
+}
+
+.sideTitleColor {
+  color: var(--side-title-color);
+}
+.bgSideTitleColor {
+  background-color: var(--side-title-color);
+}
+
+/* --------------------- */
+
+.backgroundPixelado {
+  background-image: url(./assets/backgrounds/pixeladoBackground.png);
+  background-size: contain;
+  background-repeat: repeat;
+  opacity: 0.5;
+}
+
+.logoBackground {
+  clip-path: circle(50% at 50% 50%);
+}
+
+.glasseffect {
+  background: rgba(30, 30, 30, 0.1);
+  border-radius: 16px;
+  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+}
+
+.transitionEffect {
+  transition: width 0.2s ease-in-out;
 }
