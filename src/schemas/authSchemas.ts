@@ -1,6 +1,6 @@
-import { z } from 'zod';
+import { z } from "zod";
 
-// Login form validation schema
+// Login validation schema
 export const loginSchema = z.object({
   email: z
     .string()
@@ -8,10 +8,10 @@ export const loginSchema = z.object({
     .email("Email inválido"),
   password: z
     .string()
-    .min(6, "Senha deve ter pelo menos 6 caracteres")
+    .min(6, "Senha deve ter pelo menos 6 caracteres"),
 });
 
-// Register form validation schema
+// Register validation schema
 export const registerSchema = z.object({
   name: z
     .string()
@@ -26,7 +26,7 @@ export const registerSchema = z.object({
     .min(6, "Senha deve ter pelo menos 6 caracteres"),
   confirmPassword: z
     .string()
-    .min(1, "Confirmação de senha é obrigatória")
+    .min(1, "Confirmação de senha é obrigatória"),
 }).refine((data) => data.password === data.confirmPassword, {
   message: "Senhas não coincidem",
   path: ["confirmPassword"],
