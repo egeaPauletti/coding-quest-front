@@ -1,5 +1,6 @@
 import Sidebar from "../../components/sideBar/SideBar";
 import "./index.css";
+import ChalBar from "../../components/chalBar/chalBar";
 
 export default function DiaryChal() {
   return (
@@ -15,7 +16,9 @@ export default function DiaryChal() {
         </div>
       </div>
       <div className="w-full flex justify-center items-center">
-        <div className="whiteColor">Em Desenvolvimento!!</div>
+        <div className="desafio">
+          <ChalBar world="sasasa" chal="sasasa"/>
+        </div>
       </div>
     </div>
   );
