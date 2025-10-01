@@ -16,7 +16,7 @@ export default function DiaryChal() {
         </div>
       </div>
       <div className="w-full flex justify-center items-center">
-        <div className="desafio">
+        <div className="mb-[88vh] fixed">
           <ChalBar world="sasasa" chal="sasasa"/>
         </div>
       </div>
