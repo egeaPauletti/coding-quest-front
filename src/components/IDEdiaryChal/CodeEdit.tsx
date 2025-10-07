@@ -1,8 +1,5 @@
 import { Editor } from "@monaco-editor/react";
-import { useState } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-// REMOVIDO: useLocation não é mais necessário
-// import { useLocation } from "react-router-dom"; 
+import { useState } from "react"; 
 import {
   challenges,
   CODE_SNIPPETS,
@@ -23,7 +20,7 @@ const generateLastSevenDays = () => {
         date.setDate(today.getDate() - i);
         const dayOfWeek = days[date.getDay()];
         const dayOfMonth = date.getDate();
-        // Aqui você pode adicionar a lógica para o número do desafio, usando 8 como na imagem
+        
         lastSevenDays.unshift({ day: dayOfWeek, challengeCount: dayOfMonth, isToday: i === 0 });
     }
 
@@ -49,7 +46,7 @@ const CodeEditor = () => {
   const world = WorldsData.filter((c) => Number(c.id) === id);
   console.log(world);
 
-  const [currentChallengeIndex, setCurrentChallengeIndex] = useState(0);
+  const [currentChallengeIndex] = useState(0);
   const currentChallenge = worldChallenges[currentChallengeIndex];
    const lastSevenDays = generateLastSevenDays();
 
