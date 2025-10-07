@@ -9,7 +9,6 @@ import type { WorldsData } from "../../interfaces/interfaces";
 import Button from "../Button";
 import Output from "../IDE/Output";
 import SelectLanguage from "../IDE/SelectLanguage";
-import { select } from "framer-motion/client";
 
 const generateLastSevenDays = () => {
     const days = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
@@ -42,12 +41,15 @@ const CodeEditor = () => {
   const worldChallenges = challenges.filter((c) => c.worldId === id);
 
   const WorldsData: WorldsData[] = WorldsDataSection;
-  // Buscamos o mundo pelo ID fixo
+  
   const world = WorldsData.filter((c) => Number(c.id) === id);
   console.log(world);
 
   const lastSevenDays = generateLastSevenDays();
-  const [selectedDayIndex, setSelectedDayIndex] = useState<number>(7);
+  const todayIndex = lastSevenDays.findIndex((day) => day.isToday);
+  const [selectedDayIndex, setSelectedDayIndex] = useState<number>(
+    todayIndex !== -1 ? todayIndex : lastSevenDays.length - 1
+  );
   const currentChallenge = worldChallenges[selectedDayIndex % worldChallenges.length];
   const handleDayClick = (index: number) => {
     setSelectedDayIndex(index);
@@ -64,7 +66,7 @@ const CodeEditor = () => {
             </span>
 
             <span className="whiteColor text-sm 2xl:text-base font-semibold">
-               Desafio {selectedDayIndex + 1} - {currentChallenge?.desafio}
+               Desafio {selectedDayIndex + 1} - {currentChallenge?.desafio }
             </span>
           </div>
           <div className="flex gap-5 justify-center items-center">
