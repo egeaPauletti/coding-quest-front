@@ -9,6 +9,7 @@ import type { WorldsData } from "../../interfaces/interfaces";
 import Button from "../Button";
 import Output from "../IDE/Output";
 import SelectLanguage from "../IDE/SelectLanguage";
+import { select } from "framer-motion/client";
 
 const generateLastSevenDays = () => {
     const days = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
@@ -35,8 +36,7 @@ const CodeEditor = () => {
   const initialValue = CODE_SNIPPETS[selectedLang as LanguageKey];
   const [value, setValue] = useState(initialValue);
 
-  // --- MUDANÇA PRINCIPAL AQUI ---
-  // O ID agora é definido estaticamente como 1 (ou qualquer outro ID que você queira)
+
   const id = 1; 
 
   const worldChallenges = challenges.filter((c) => c.worldId === id);
@@ -46,9 +46,12 @@ const CodeEditor = () => {
   const world = WorldsData.filter((c) => Number(c.id) === id);
   console.log(world);
 
-  const [currentChallengeIndex] = useState(0);
-  const currentChallenge = worldChallenges[currentChallengeIndex];
-   const lastSevenDays = generateLastSevenDays();
+  const lastSevenDays = generateLastSevenDays();
+  const [selectedDayIndex, setSelectedDayIndex] = useState<number>(7);
+  const currentChallenge = worldChallenges[selectedDayIndex % worldChallenges.length];
+  const handleDayClick = (index: number) => {
+    setSelectedDayIndex(index);
+  };
 
   return (
     <div className="flex flex-col gap-5 justify-center items-center h-full w-full z-90">
@@ -56,11 +59,12 @@ const CodeEditor = () => {
         <div className="flex w-full h-[15%] justify-between px-[1.5%]">
           <div className="flex flex-col justify-center">
             <span className="whiteColor opacity-50 text-sm 2xl:text-base">
-              Desafio do dia {id} | O {world[0]?.worldName}!
+                Desafio do dia {lastSevenDays[selectedDayIndex]?.challengeCount ?? ""} |{" "}
+                O {world[0]?.worldName ?? "Mundo Desconhecido"}!
             </span>
 
             <span className="whiteColor text-sm 2xl:text-base font-semibold">
-              Desafio {currentChallengeIndex + 1} - {currentChallenge?.desafio}
+               Desafio {selectedDayIndex + 1} - {currentChallenge?.desafio}
             </span>
           </div>
           <div className="flex gap-5 justify-center items-center">
@@ -73,10 +77,12 @@ const CodeEditor = () => {
                           {lastSevenDays.map((day, index) => (
                                <div
                                   key={index}
+                                  onClick={() => handleDayClick(index)}
                                   className={`flex flex-col items-center justify-center p-2 rounded-lg 
-                                               ${day.isToday ? 'bg-[#2ea98c]' : 'bg-gray-700'} 
-                                               whiteColor text-xs 2xl:text-sm font-semibold cursor-pointer transition-colors hover:bg-gray-600`}
-                                   style={{ width: '40px', height: '40px' }} 
+                                               ${day.isToday ? 'border-1 border-[#2ea98c] bg-black' : 'bg-black'} ${index === selectedDayIndex ? 'bg-gray-600' : ''} 
+                                               whiteColor text-xs 2xl:text-sm font-semibold cursor-pointer transition-colors hover:bg-gray-800`}
+                                              
+                                               style={{ width: '40px', height: '40px' }} 
                                 >
                                    <span>{day.day}</span>
                                   
