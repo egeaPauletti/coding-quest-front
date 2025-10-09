@@ -21,6 +21,7 @@ const generateLastSevenDays = () => {
         const dayOfWeek = days[date.getDay()];
         const dayOfMonth = date.getDate();
         
+        
         lastSevenDays.unshift({ day: dayOfWeek, challengeCount: dayOfMonth, isToday: i === 0 });
     }
 
@@ -49,8 +50,10 @@ const CodeEditor = () => {
   const todayIndex = lastSevenDays.findIndex((day) => day.isToday);
   const [selectedDayIndex, setSelectedDayIndex] = useState<number>(
     todayIndex !== -1 ? todayIndex : lastSevenDays.length - 1
+
   );
-  const currentChallenge = worldChallenges[selectedDayIndex % worldChallenges.length];
+  const dayOfMonth = lastSevenDays[selectedDayIndex]?.challengeCount ?? 1; 
+  const currentChallenge = worldChallenges[(dayOfMonth - 1) % worldChallenges.length];
   const handleDayClick = (index: number) => {
     setSelectedDayIndex(index);
   };
@@ -66,7 +69,7 @@ const CodeEditor = () => {
             </span>
 
             <span className="whiteColor text-sm 2xl:text-base font-semibold">
-               Desafio {selectedDayIndex + 1} - {currentChallenge?.desafio }
+               Desafio: {currentChallenge?.desafio }
             </span>
           </div>
           <div className="flex gap-5 justify-center items-center">
