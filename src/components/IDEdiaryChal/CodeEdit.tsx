@@ -87,7 +87,7 @@ const CodeEditor = () => {
                                                ${day.isToday ? 'border-1 border-[#2ea98c] bg-black' : 'bg-black'} ${index === selectedDayIndex ? 'bg-gray-600' : ''} 
                                                whiteColor text-xs 2xl:text-sm font-semibold cursor-pointer transition-colors hover:bg-gray-800`}
                                               
-                                               style={{ width: '40px', height: '40px' }} 
+                                               style={{ width: '50px', height: '40px' }} 
                                 >
                                    <span>{day.day}</span>
                                   
