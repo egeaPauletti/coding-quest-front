@@ -6,7 +6,7 @@ const AboutScreen = () => {
     <div className="w-screen h-screen flex justify-center items-center bg-[#222222]  backgroundAbout">
       <div className="top-0 left-0 absolute z-50 h-screen w-screen flex justify-center items-center backgroundPixelado"></div>
       <div className="w-screen h-screen flex items-center justify-center">
-        <div className="absolute top-[2%] left-0 z-100 w-full justify-center items-center flex ">
+        <div className="fixed top-[2%] left-0 z-100 w-full justify-center items-center flex ">
           <Header />
         </div>
         <div className="absolute flex items-center justify-center">
