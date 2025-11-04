@@ -1,6 +1,7 @@
 import Header from "../../components/Header";
 import About from "./about";
 import Inital from "./initial/Initial";
+import Plataform from "./plataform";
 
 export default function Content() {
   return (
@@ -11,6 +12,7 @@ export default function Content() {
       <div className="w-full h-full overflow-y-auto overflow-x-hidden z-90">
         <Inital />
         <About />
+        <Plataform />
       </div>
     </div>
   );

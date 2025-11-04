@@ -79,19 +79,3 @@ export default function About() {
     </section >
   )
 }
-
-//  <span className="primaryColor font-bold 2xl:text-base text-xs -rotate-90 absolute right-0 bottom-[10%] slideToTop">
-//         CodingQuest
-//       </span>
-//       <div className="absolute flex w-screen h-screen gap-10 justify-start items-end bottom-[5%] left-[5%] slideToRight">
-//         <div className="bgPrimaryColor w-[5%] h-[0.25%]"></div>
-//         <div className="bgPrimaryColor w-[5%] h-[0.25%]"></div>
-//       </div>
-//       <div className="absolute flex w-screen h-screen gap-10 justify-start items-end bottom-[5%] left-[30%] slideToRight">
-//         <div className="bgPrimaryColor w-[5%] h-[0.25%]"></div>
-//         <div className="bgPrimaryColor w-[5%] h-[0.25%]"></div>
-//       </div>
-//       <div className="absolute flex w-screen h-screen gap-10 justify-start items-end bottom-[5%] left-[55%] slideToRight">
-//         <div className="bgPrimaryColor w-[5%] h-[0.25%]"></div>
-//         <div className="bgPrimaryColor w-[5%] h-[0.25%]"></div>
-//       </div>

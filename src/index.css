@@ -3,6 +3,7 @@
 body {
   background-image: url(./assets/backgrounds/background.png);
   background-size: cover;
+  color: black;
   background-repeat: no-repeat;
   font-family: "Roboto", sans-serif;
   overflow: hidden;
@@ -26,6 +27,14 @@ body {
   --third-color: #111111;
   --fourth-color: #212121;
   --side-title-color: #404040;
+}
+
+@theme {
+  --color-primary: #2ea98c;
+  --color-second: #222222;
+  --color-third: #111111;
+  --color-fourth: #212121;
+  --color-side-title: #404040;
 }
 
 /* Primary Color */
