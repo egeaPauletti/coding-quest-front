@@ -1,7 +1,8 @@
 import Header from "../../components/Header";
 import About from "./about";
-import Inital from "./initial/Initial";
+import Inital from "./initial";
 import Plataform from "./plataform";
+import ForPlayers from "./players";
 
 export default function Content() {
   return (
@@ -13,6 +14,7 @@ export default function Content() {
         <Inital />
         <About />
         <Plataform />
+        <ForPlayers />
       </div>
     </div>
   );
