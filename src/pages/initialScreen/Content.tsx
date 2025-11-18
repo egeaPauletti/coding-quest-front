@@ -15,7 +15,7 @@ export default function Content() {
         <About />
         <Plataform />
         <ForPlayers />
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }

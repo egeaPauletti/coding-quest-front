@@ -4,7 +4,7 @@ import LogoCQ from "./LogoCQ";
 
 export default function Header() {
   return (
-    <header className="fixed w-full h-max py-5 z-100 top-0 bg-primaryColor flex items-center justify-around rounded-lg shadow-xl">
+    <header className="fixed w-full h-max py-5 z-100 top-0 bg-black/20 flex items-center justify-around shadow-xl">
       <a className="flex items-center">
         <figure className="flex items-center space-x-3 ">
           <LogoCQ size={50} />
