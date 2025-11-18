@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import About from "./about";
 import Developers from "./devs";
@@ -17,6 +18,7 @@ export default function Content() {
         <Plataform />
         <ForPlayers />
         <Developers />
+        <Footer />
       </div >
     </div >
   );

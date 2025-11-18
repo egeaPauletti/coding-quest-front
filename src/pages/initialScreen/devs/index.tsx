@@ -3,7 +3,7 @@ import LogoCQ from "../../../components/LogoCQ";
 
 export default function Developers() {
   return (
-    <section id="developers" className="h-screen w-screen flex flex-col justify-center items-center px-20 mt-50">
+    <section id="developers" className="h-screen w-screen flex flex-col justify-center items-center px-20 my-30">
       <div><h2 className="w-full text-primary text-3xl font-semibold text-center">Nossos Desenvolvedores</h2></div>
       <div className="w-full h-max flex justify-center items-center">
         <div className="flex flex-col items-start gap-10 flex-2">
