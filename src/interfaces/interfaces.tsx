@@ -31,7 +31,7 @@ export interface SquareData {
   icon?: React.ReactNode;
   className?: string;
 }
- 
+
 export interface OptionProps {
   Icon: React.ReactNode;
   title: string;
@@ -39,11 +39,18 @@ export interface OptionProps {
   open: boolean;
 }
 
-  export interface WorldsData {
+export interface WorldsData {
   id: string;
   worldName: string;
+  waterColor: string;
+  landColor: string;
+  rotationDurationMs: number;
+  rotationDirection?: "forward" | "reverse";
+  rotationOffsetDeg?: number;
+  continentSeed: number;
+  continentCount: number;
 }
-  
+
 export interface ChallegesData {
   worldId: string;
   chal: string;

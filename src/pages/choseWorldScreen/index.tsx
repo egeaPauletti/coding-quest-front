@@ -1,61 +1,135 @@
-import { useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import Sidebar from "../../components/sideBar/SideBar";
 import { WorldsDataSection } from "../../constants/constants";
 import type { WorldsData } from "../../interfaces/interfaces";
-import "./index.css";
+import PlanetIcon from "./PlanetIcon";
 
 const ChoseWorld: React.FC = () => {
   const WorldsData: WorldsData[] = WorldsDataSection;
-  const [page, setPage] = useState(0); // Página atual
-  const itemsPerPage = 5;
+  const [page, setPage] = useState(0);
+  const itemsPerPage = 3;
+  const [visibleCards, setVisibleCards] = useState<number[]>([]);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const transitionDurationMs = 300;
+  const transitionTimeoutRef = useRef<number | null>(null);
 
-  // Pegamos os mundos da página atual
-  const paginatedWorlds = WorldsData.slice(
-    page * itemsPerPage,
-    (page + 1) * itemsPerPage
+  const paginatedWorlds = useMemo(
+    () => WorldsData.slice(page * itemsPerPage, (page + 1) * itemsPerPage),
+    [WorldsData, page, itemsPerPage]
+  );
+  const totalPages = useMemo(
+    () => Math.ceil(WorldsData.length / itemsPerPage),
+    [WorldsData.length, itemsPerPage]
   );
 
+  useEffect(() => {
+    setVisibleCards([]);
+    const timers = paginatedWorlds.map((_, idx) =>
+      setTimeout(() => {
+        setVisibleCards((prev) =>
+          prev.includes(idx) ? prev : [...prev, idx]
+        );
+      }, idx * 140)
+    );
+
+    return () => {
+      timers.forEach((timer) => clearTimeout(timer));
+    };
+  }, [paginatedWorlds]);
+
+  useEffect(() => {
+    return () => {
+      if (transitionTimeoutRef.current !== null) {
+        window.clearTimeout(transitionTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const handlePageChange = (targetPage: number) => {
+    if (
+      targetPage < 0 ||
+      targetPage >= totalPages ||
+      targetPage === page ||
+      isTransitioning
+    ) {
+      return;
+    }
+
+    if (transitionTimeoutRef.current !== null) {
+      window.clearTimeout(transitionTimeoutRef.current);
+    }
+
+    setVisibleCards([]);
+    setIsTransitioning(true);
+    transitionTimeoutRef.current = window.setTimeout(() => {
+      setPage(targetPage);
+      setIsTransitioning(false);
+    }, transitionDurationMs);
+  };
+
   return (
-    <div className="w-screen h-screen flex justify-center items-center bgFourthColor">
-      <div className="w-full h-full backgroundPixelado flex justify-center items-center absolute top-0 left-0 z-50"></div>
+    <div className="w-screen h-screen flex justify-center items-center backgroundStared">
       <Sidebar />
-      <div className="w-full h-full flex flex-col justify-center items-center gap-10 z-90">
-        <div className="whiteColor bgThirdColor w-[25%] h-[5%] flex items-center justify-center text-xs 2xl:text-base font-semibold rounded-lg 2xl:rounded-xl">
-          Escolha um mundo
+      <div className="w-full h-full flex flex-col justify-center items-center gap-10 z-[60]">
+        <div className="whiteColor flex items-center justify-center text-2xl xl:text-base font-semibold rounded-lg 2xl:rounded-xl">
+          <h1 className="text-center text-4xl font-bold">Escolha um mundo</h1>
         </div>
 
-        <div className="flex w-[60%] h-[50%] 2xl:w-[60%] 2xl:h-[60%] gap-1">
-          {paginatedWorlds.map((item, index) => (
-            <div
-              key={index}
-              className={`flex flex-col items-center justify-center backgroundWorlds${item.id} animationDelayWorlds${item.id} w-1/4 h-full  sliderWorlds opacity-0 hover:px-[10%] relative`}
-            >
-              <div className="flex w-full h-full bg-black opacity-65 absolute"></div>
-              <div className="flex flex-col gap-5 h-[70%] items-center z-100">
-                <span className="primaryColor text-sm 2xl:text-base font-bold w-max">
-                  Mundo {item.id}
-                </span>
-                <span className="whiteColor ibm text-xs 2xl:text-base opacity-70 2xl:opacity-100 w-[90%] text-center">
-                  {item.worldName}
-                </span>
+        <div
+          className={`flex flex-wrap justify-center w-full max-w-6xl px-4 gap-4 md:gap-6 transition-opacity ${
+            isTransitioning ? "opacity-0" : "opacity-100"
+          }`}
+          style={{ transitionDuration: `${transitionDurationMs}ms` }}
+        >
+          {paginatedWorlds.map((item, index) => {
+            const isVisible = visibleCards.includes(index);
+
+            return (
+              <div
+                key={item.id}
+                className={`group relative flex h-[360px] w-[260px] flex-col items-center justify-between gap-5 rounded-3xl border p-6 text-center backdrop-blur-sm transition-all duration-500 ease-out hover:scale-105 hover:shadow-[0_35px_90px_rgba(10,10,10,0.55)] md:h-[380px] md:w-[280px] ${
+                  isVisible
+                    ? "opacity-100 translate-y-0 scale-100"
+                    : "opacity-0 translate-y-6 scale-95"
+                }`}
+              >
+                <PlanetIcon
+                  waterColor={item.waterColor}
+                  landColor={item.landColor}
+                  rotationDurationMs={item.rotationDurationMs}
+                  rotationDirection={item.rotationDirection}
+                  rotationOffsetDeg={item.rotationOffsetDeg}
+                  continentSeed={item.continentSeed}
+                  continentCount={item.continentCount}
+                />
+
+                <div className="space-y-2">
+                  <span className="primaryColor text-sm uppercase tracking-[0.2em]">
+                    Mundo {item.id}
+                  </span>
+                  <p className="whiteColor ibm text-base font-semibold leading-snug">
+                    {item.worldName}
+                  </p>
+                </div>
+
+                <Link className="z-10" to={`/worlds/${item.id}`}>
+                  <Button label="Acessar" />
+                </Link>
               </div>
-              <Link to={`/worlds/${item.id}`}>
-                <Button label="Acessar" />
-              </Link>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="flex gap-4 mt-4">
           <Button
             label="Anterior"
-            onClick={() => setPage((prev) => Math.max(prev - 1, 0))}
+            onClick={() => handlePageChange(page - 1)}
           />
           <Button
             label="Proximo"
-            onClick={() => setPage((prev) => Math.min(prev + 1, 1))}
+            onClick={() => handlePageChange(page + 1)}
           />
         </div>
       </div>
