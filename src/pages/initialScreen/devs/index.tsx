@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaUserCircle } from "react-icons/fa";
 import LogoCQ from "../../../components/LogoCQ";
 
 export default function Developers() {
@@ -8,7 +8,9 @@ export default function Developers() {
       <div className="w-full h-max flex justify-center items-center">
         <div className="flex flex-col items-start gap-10 flex-2">
           <div className="w-max h-max flex flex-row items-center text-start gap-5 relative left-20">
-            <div className="bg-primary size-30 rounded-lg"></div>
+            <div className="flex justify-center items-center bg-primary size-30 rounded-lg text-7xl text-white/60">
+              <FaUserCircle />
+            </div>
             <div className="w-max h-max flex flex-col gap-2.5">
               <h3 className="text-lg text-primary font-semibold">Desenvolvedor</h3>
               <figure className="flex text-xl text-primary gap-2.5">
@@ -22,7 +24,9 @@ export default function Developers() {
             </div>
           </div>
           <div className="w-max h-max flex flex-rowitems-center text-start gap-5">
-            <div className="bg-primary size-30 rounded-lg"></div>
+            <div className="flex justify-center items-center bg-primary size-30 rounded-lg text-7xl text-white/60">
+              <FaUserCircle />
+            </div>
             <div className="w-max h-max flex flex-col gap-2.5">
               <h3 className="text-lg text-primary font-semibold">Desenvolvedor</h3>
               <figure className="flex text-xl text-primary gap-2.5">
@@ -36,7 +40,9 @@ export default function Developers() {
             </div>
           </div>
           <div className="w-max h-max flex flex-row items-center text-start gap-5 relative left-20">
-            <div className="bg-primary size-30 rounded-lg"></div>
+            <div className="flex justify-center items-center bg-primary size-30 rounded-lg text-7xl text-white/60">
+              <FaUserCircle />
+            </div>
             <div className="w-max h-max flex flex-col gap-2.5">
               <h3 className="text-lg text-primary font-semibold">Desenvolvedor</h3>
               <figure className="flex text-xl text-primary gap-2.5">
@@ -55,7 +61,9 @@ export default function Developers() {
 
         <div className="flex flex-col items-end gap-10 flex-2">
           <div className="w-max h-max flex flex-row-reverse items-center text-end gap-5 relative -left-20">
-            <div className="bg-primary size-30 rounded-lg"></div>
+            <div className="flex justify-center items-center bg-primary size-30 rounded-lg text-7xl text-white/60">
+              <FaUserCircle />
+            </div>
             <div className="w-max h-max flex flex-col gap-2.5">
               <h3 className="text-lg text-primary font-semibold">Desenvolvedor</h3>
               <figure className="flex text-xl flex-row-reverse text-primary gap-2.5">
@@ -69,7 +77,9 @@ export default function Developers() {
             </div>
           </div>
           <div className="w-max h-max flex flex-row-reverse items-center text-end gap-5">
-            <div className="bg-primary size-30 rounded-lg"></div>
+            <div className="flex justify-center items-center bg-primary size-30 rounded-lg text-7xl text-white/60">
+              <FaUserCircle />
+            </div>
             <div className="w-max h-max flex flex-col gap-2.5">
               <h3 className="text-lg text-primary font-semibold">Desenvolvedor</h3>
               <figure className="flex flex-row-reverse text-xl text-primary gap-2.5">
@@ -83,7 +93,9 @@ export default function Developers() {
             </div>
           </div>
           <div className="w-max h-max flex flex-row-reverse items-center text-end gap-5 relative -left-20">
-            <div className="bg-primary size-30 rounded-lg"></div>
+            <div className="flex justify-center items-center bg-primary size-30 rounded-lg text-7xl text-white/60">
+              <FaUserCircle />
+            </div>
             <div className="w-max h-max flex flex-col gap-2.5">
               <h3 className="text-lg text-primary font-semibold">Desenvolvedor</h3>
               <figure className="flex text-xl flex-row-reverse text-primary gap-2.5">
