@@ -17,7 +17,7 @@ const InitialScreen = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setPreLoaderAtivo(false);
-    }, 4000);
+    }, 40);
 
     return () => clearTimeout(timer);
   }, []);

@@ -1,51 +1,40 @@
-import { Link } from "react-router-dom";
-import Button from "./Button";
 import LogoCQ from "./LogoCQ";
 
-export default function Header() {
+export default function Footer() {
   return (
-    <header className="fixed w-full h-max py-5 z-100 top-0 bg-black/20 flex items-center justify-around shadow-xl">
+    <footer className="w-full h-max flex flex-col justify-center items-center gap-5 glasseffect border-primary/40 border-t py-10">
       <a className="flex items-center">
         <figure className="flex items-center space-x-3 ">
-          <LogoCQ size={50} />
+          <LogoCQ size={60} />
           <div className="text-white text-lg ibm uppercase">CodingQuest</div>
         </figure>
       </a>
       <nav className="flex space-x-8 pl-[2%] 2xl:text-sm text-xs ">
-        <a href="#initial">
+        <a>
           <button className="text-white underlineAnimado cursor-pointer">
             Home
           </button>
         </a>
-        <a href="#about">
+        <a>
           <button className="text-white underlineAnimado cursor-pointer">
             Sobre nós
           </button>
         </a>
-        <a href="#plataform">
+        <a>
           <button className="text-white underlineAnimado cursor-pointer">
             Plataforma
           </button>
         </a>
-        <a href="#forPlayers">
+        <a>
           <button className="text-white underlineAnimado cursor-pointer">
             Quem pode Jogar?
           </button>
         </a>
-        <a href="#developers">
-          <button className="text-white underlineAnimado cursor-pointer">
-            Desenvolvedores
-          </button>
-        </a>
+        <button className="text-white underlineAnimado cursor-pointer">
+          Desenvolvedores
+        </button>
       </nav>
-      <div className="flex items-center gap-5">
-        <Link to={"/login"}>
-          <Button label="Entrar" />
-        </Link>
-        <Link to={"/register"}>
-          <Button label="Registrar" filled />
-        </Link>
-      </div >
-    </header >
-  );
+      <span className="w-150 text-center text-sm text-white font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam perferendis expedita ullam, cupiditate sunt</span>
+    </footer>
+  )
 }
