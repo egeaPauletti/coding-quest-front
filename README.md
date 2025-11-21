@@ -21,7 +21,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Refatorar o design da tela "Modo Campanha - Escolha de Mundo"
 - [x] Refatorar o design da tela "Modo Campanha - Mundo"
 - [x] Implementar IDE para resolução dos desafios
-- [ ] Refatorar o design da tela "Desafio Diario"
+- [x] Refatorar o design da tela "Desafio Diario"
 - [ ] Refatorar o design da tela "Home"
 - [ ] Criar tela "Perfil do Usúario"
 - [ ] Adicionar Sistema de Recompença e XP
