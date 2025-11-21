@@ -1,6 +1,6 @@
 export default function ForPlayers() {
   return (
-    <section className="w-screen h-max flex flex-col justify-center items-center gap-10 my-50">
+    <section id="forPlayers" className="w-screen min-h-screen h-max flex flex-col justify-center items-center gap-10 my-50 py-25">
       <div className="w-200 h-max flex flex-col items-center gap-5">
         <h2 className="w-full text-primary text-3xl font-semibold text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h2>
         <p className="w-full text-white text-sm max-w-200 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus doloremque ducimus repudiandae beatae neque, ratione, harum quidem placeat modi cupiditate ipsa voluptates vitae consequatur id? Pariatur corrupti recusandae maxime dolor.</p>

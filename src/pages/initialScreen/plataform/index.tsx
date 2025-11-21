@@ -2,7 +2,7 @@ import panelCampaign from "../../../assets/panels/panelCampaign.jpg"
 import "./index.css"
 export default function Plataform() {
   return (
-    <section className="w-screen h-max flex flex-col justify-center items-center gap-20 my-20">
+    <section id="plataform" className="w-screen min-h-screen h-max flex flex-col justify-center items-center gap-20 py-30">
       <div className="w-full h-full flex flex-col gap-20 justify-around items-center px-20">
         <div className="w-full flex flex-col gap-10 items-center justify-center text-center">
           <h2 className="w-full text-primary text-3xl font-semibold">Nossas Plataforma</h2>

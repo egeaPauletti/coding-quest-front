@@ -3,7 +3,7 @@ import { FloatingSquares } from "../../../components/FloatingSquares";
 
 export default function Inital() {
   return (
-    <section className="w-screen h-screen flex flex-col justify-center items-center relative">
+    <section id="initial" className="w-screen h-screen flex flex-col justify-center items-center relative">
       <div className="h-screen w-screen flex justify-center items-center absolute z-50 animationFadeIn">
         <FloatingSquares />
       </div>

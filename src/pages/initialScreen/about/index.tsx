@@ -29,7 +29,7 @@ export default function About() {
 
 
   return (
-    <section ref={sectionRef} className={`w-screen h-max flex flex-col justify-center items-center`}>
+    <section ref={sectionRef} id="about" className={`w-screen h-max flex flex-col justify-center items-center`}>
       <div className="w-screen h-screen flex items-center justify-center">
         <div className="flex items-center justify-center">
           <div className="w-1/2">
