@@ -144,16 +144,39 @@
 
 /*  */
 .sliderWorlds {
-  animation: sliderWorlds 1s ease-in forwards;
+  animation: sliderWorlds 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
 }
 
 @keyframes sliderWorlds {
-  from {
-    transform: translateX(1000%) skew(-10deg);
+  0% {
+    transform: translateX(80px) translateY(20px) scale(0.94);
     opacity: 0;
   }
-  to {
-    transform: translateX(0) skew(-10deg);
+  60% {
+    transform: translateX(0) translateY(-6px) scale(1.02);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) translateY(0) scale(1);
     opacity: 1;
   }
 }
+
+@keyframes planet-scroll {
+  0% {
+    transform: translateX(var(--planet-offset, 0%));
+  }
+  100% {
+    transform: translateX(calc(var(--planet-offset, 0%) - 100%));
+  }
+}
+
+@keyframes planet-scroll-reverse {
+  0% {
+    transform: translateX(calc(var(--planet-offset, 0%) - 100%));
+  }
+  100% {
+    transform: translateX(var(--planet-offset, 0%));
+  }
+}
+
