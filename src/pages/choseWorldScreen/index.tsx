@@ -71,16 +71,23 @@ const ChoseWorld: React.FC = () => {
 
   return (
     <div className="w-screen h-screen flex justify-center items-center backgroundStared">
-      <Sidebar />
+      {/* {correção da sidebar} */}
+      <div>
+        <div className="opacity-0 z-50">
+          <Sidebar />
+        </div>
+        <div className="absolute top-0 -left-1 z-100">
+          <Sidebar />
+        </div>
+      </div>
       <div className="w-full h-full flex flex-col justify-center items-center gap-10 z-[60]">
         <div className="whiteColor flex items-center justify-center text-2xl xl:text-base font-semibold rounded-lg 2xl:rounded-xl">
           <h1 className="text-center text-4xl font-bold">Escolha um mundo</h1>
         </div>
 
         <div
-          className={`flex flex-wrap justify-center w-full max-w-6xl px-4 gap-4 md:gap-6 transition-opacity ${
-            isTransitioning ? "opacity-0" : "opacity-100"
-          }`}
+          className={`flex flex-wrap justify-center w-full max-w-6xl px-4 gap-4 md:gap-6 transition-opacity ${isTransitioning ? "opacity-0" : "opacity-100"
+            }`}
           style={{ transitionDuration: `${transitionDurationMs}ms` }}
         >
           {paginatedWorlds.map((item, index) => {
@@ -89,11 +96,10 @@ const ChoseWorld: React.FC = () => {
             return (
               <div
                 key={item.id}
-                className={`group relative flex h-[360px] w-[260px] flex-col items-center justify-between gap-5 rounded-3xl border p-6 text-center backdrop-blur-sm transition-all duration-500 ease-out hover:scale-105 hover:shadow-[0_35px_90px_rgba(10,10,10,0.55)] md:h-[380px] md:w-[280px] ${
-                  isVisible
+                className={`group relative flex h-[360px] w-[260px] flex-col items-center justify-between gap-5 rounded-3xl border p-6 text-center backdrop-blur-sm transition-all duration-500 ease-out hover:scale-105 hover:shadow-[0_35px_90px_rgba(10,10,10,0.55)] md:h-[380px] md:w-[280px] ${isVisible
                     ? "opacity-100 translate-y-0 scale-100"
                     : "opacity-0 translate-y-6 scale-95"
-                }`}
+                  }`}
               >
                 <PlanetIcon
                   waterColor={item.waterColor}
