@@ -54,6 +54,8 @@ const CodeEditor = () => {
   );
   const dayOfMonth = lastSevenDays[selectedDayIndex]?.challengeCount ?? 1;
   const currentChallenge = worldChallenges[(dayOfMonth - 1) % worldChallenges.length];
+
+
   const handleDayClick = (index: number) => {
     setSelectedDayIndex(index);
   };
@@ -64,8 +66,7 @@ const CodeEditor = () => {
         <div className="flex w-full h-[15%] justify-between px-[1.5%]">
           <div className="flex flex-col justify-center">
             <span className="whiteColor opacity-50 text-sm 2xl:text-base">
-              Desafio do dia {lastSevenDays[selectedDayIndex]?.challengeCount ?? ""} |{" "}
-              O {world[0]?.worldName ?? "Mundo Desconhecido"}!
+              Desafio do dia
             </span>
 
             <span className="whiteColor text-sm 2xl:text-base font-semibold">
