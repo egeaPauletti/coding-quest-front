@@ -7,15 +7,18 @@ COPY package*.json ./
 RUN npm ci
 
 COPY . .
+
+# Variáveis de ambiente no build
+ARG VITE_API_URL
+ENV VITE_API_URL=$VITE_API_URL
+
 RUN npm run build
 
 # Stage 2: Production
 FROM nginx:alpine
 
-# Copiar build da aplicação
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Configurar nginx para SPA
 RUN echo 'server { \
     listen 80; \
     root /usr/share/nginx/html; \
